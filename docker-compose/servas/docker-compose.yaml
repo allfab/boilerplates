@@ -1,0 +1,23 @@
+---
+version: "3.9"
+services:
+  servas:    
+    container_name: servas
+    image: beromir/servas
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    volumes:
+      - ./servas/.env:/var/www/html/.env
+      - ./servas/db:/var/www/html/database/sqlite
+    networks:
+      - servas
+
+networks:
+  servas:
+    name: servas
+    driver: bridge
+    ipam:
+      config:
+        - subnet: "172.18.0.0/16"
+          gateway: "172.18.0.1"
