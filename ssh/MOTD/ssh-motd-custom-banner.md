@@ -5,12 +5,6 @@ L'option motd est toujours disponible sur la plupart des systèmes Linux moderne
 
 [^*]: Message of the Day - Message du jour
 
-### Sommaire
-
-1. [Installation](#installation)
-2. [Usage](#usage)
-3. [See Also](#see-also)
-4. [License](#license)
 
 ## Définition d'un MOTD de texte de base sous Linux
 
