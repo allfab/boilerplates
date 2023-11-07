@@ -3,6 +3,8 @@
 Autrefois, avant les interfaces graphiques, les administrateurs système laissaient un message aux utilisateurs en utilisant le fichier « MOTD » du message du jour.
 L'option motd est toujours disponible sur la plupart des systèmes Linux modernes. Dans cet article, nous allons voir comment créer une jolie bannière de connexion personnalisée avec des illustrations ASCII et des informations système.
 
+[^*]: Message of the Day - Message du jour
+
 ### Sommaire
 
 1. [Installation](#installation)
@@ -114,5 +116,3 @@ neofetch
 ```
 
 Pour utiliser neofetch comme bannière de connexion, exécutez simplement la commande suivante pour créer un script qui s'exécute lors de la connexion.
-
-[^*]: Message of the Day - Message du jour
