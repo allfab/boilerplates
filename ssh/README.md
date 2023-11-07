@@ -38,6 +38,31 @@ Une autre option, plus flexible, consiste à créer un script et à le placer da
 L'utilisation d'un script dans /etc/profile.d vous offre des possibilités presque illimitées. J'ai utilisé un générateur d'art ASCII pour créer le nom de mon serveur via [**figurine**](https://github.com/arsham/figurine) et j'ai créé cette bannière de connexion :
 ![image](https://github.com/allfab/boilerplates/assets/1840185/9d8d7991-5caf-4c44-9db9-c6a32e9834d5)
 
-J'ai ensuite ajouté les commandes lastlog et uptime pour me montrer des informations sur le serveur.
+J'ai ensuite ajouté la commande [**neofetch**](https://github.com/dylanaraps/neofetch) pour me montrer des informations sur le serveur.
+
+### Comment créer une bannière de connexion ASCII Art via Figurine
+
+### Utilisation de neofetch pour enrichir la bannière de connexion personnalisée
+
+L'utilitaire [**neofetch**](https://github.com/dylanaraps/neofetch) est un outil de ligne de commande qui affiche le logo de distribution et les informations système pour le système sur lequel il est installé.
+
+Installation de l'utilitaire neofetch :
+
+Vous pouvez installer **neofetch** facilement avec la plupart des gestionnaires de packages.
+
+Pour installer neofetch sur Debian/Ubuntu :
+```
+sudo apt-get install neofetch
+```
+
+Utiliser neofetch :
+
+Bien que **neofetch** ait une tonne d'options, il vous suffit de l'invoquer sans aucun argument pour obtenir un joli logo ascii et des informations système (comme vu ci-dessus) :
+
+```
+neofetch
+```
+
+Pour utiliser neofetch comme bannière de connexion, exécutez simplement la commande suivante pour créer un script qui s'exécute lors de la connexion.
 
 [^*]: Message of the Day - Message du jour
