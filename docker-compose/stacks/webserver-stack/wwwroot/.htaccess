@@ -1,0 +1,72 @@
+	# ENABLE INDEXING
+	Options +Indexes
+
+	# INDEX OPTIONS
+	IndexOptions +FancyIndexing +IgnoreCase +FoldersFirst +XHTML +HTMLTable +SuppressRules +SuppressDescription +NameWidth=* +IconsAreLinks +SuppressSize
+
+	# HIDE /theme DIRECTORY
+	IndexIgnore .htaccess /admin/directory-theme/theme favicon.ico *.swp *.swo 404.html
+	ErrorDocument 404 /admin/directory-theme/theme/404.html
+
+#
+# GENERAL ICONS (BLANK, DIRECTORY, PARENT DIRECTORY)
+#
+
+#
+# Replace {FOLDERNAME} with your directory URL eg:
+# If your directory is http://mywebsite.com/share/
+# you would change to:
+#
+# AddIcon /share/theme/icons/blank.png ^^BLANKICON^^
+#
+
+	AddIcon /admin/directory-theme/.icons/default.png ^^BLANKICON^^
+	AddIcon /admin/directory-theme/.icons/folder.png ^^DIRECTORY^^
+	AddIcon /admin/directory-theme/.icons/folder-home.png ..
+
+#
+# EXTENSION SPECIFIC ICONS
+#
+
+	AddIcon /admin/directory-theme/.icons/audio-x-mpeg.png .aif .iff .m3u .m4a .mid .mp3 .mpa .ra
+	AddIcon /admin/directory-theme/.icons/audio-x-wav.png .wav .wma
+	AddIcon /admin/directory-theme/.icons/text-x-c.png .c
+	AddIcon /admin/directory-theme/.icons/text-css.png .css
+	AddIcon /admin/directory-theme/.icons/application-msword.png .doc .docx .docm .dot .dotx .dotm .log .msg .odt .pages .rtf .tex .wpd .wps
+	AddIcon /admin/directory-theme/.icons/image-svg.png .svg
+	AddIcon /admin/directory-theme/.icons/illustrator.png .ai .eps
+	AddIcon /admin/directory-theme/.icons/image-gif.png .gif
+	AddIcon /admin/directory-theme/.icons/text-html.png .html .xhtml .shtml .htm .liquid .rb
+	AddIcon /admin/directory-theme/.icons/image-x-ico.png .ico
+	AddIcon /admin/directory-theme/.icons/application-x-jar.png .jar
+	AddIcon /admin/directory-theme/.icons/image-jpg.png .jpg .jpeg
+	AddIcon /admin/directory-theme/.icons/text-x-javascript.png .js .json
+	AddIcon /admin/directory-theme/.icons/application-x-bittorrent.png .pkg .dmg .rar
+	AddIcon /admin/directory-theme/.icons/application-pdf.png .pdf
+	AddIcon /admin/directory-theme/.icons/application-x-php.png .php
+	AddIcon /admin/directory-theme/.icons/image-png.png .png .tiff
+	AddIcon /admin/directory-theme/.icons/image-x-psd.png .ps .psd
+	AddIcon /admin/directory-theme/.icons/application-rss+xml.png .rss
+	AddIcon /admin/directory-theme/.icons/text-x-sql.png .sql
+	AddIcon /admin/directory-theme/.icons/otf.png	.otf
+	AddIcon /admin/directory-theme/.icons/ttf.png .ttf .woff .eot
+	AddIcon /admin/directory-theme/.icons/text-plain.png .txt
+	AddIcon /admin/directory-theme/.icons/markdown.png .md
+	AddIcon /admin/directory-theme/.icons/video-x-generic.png .asf .asx .avi .flv .mov .mp4 .mpg .rm .srt .swf .vob .wmv
+	AddIcon /admin/directory-theme/.icons/application-vnd.ms-excel.png .xml .xlsx .xlsm .xltx .xltm .xlam .xlr .xls .csv
+	AddIcon /admin/directory-theme/.icons/application-x-zip.png .zip .bin
+	DefaultIcon /admin/directory-theme/.icons/default.png
+
+#
+# THEME FILES
+#
+
+	HeaderName /admin/directory-theme/theme/header.html
+	ReadmeName /admin/directory-theme/theme/footer.html
+	IndexStyleSheet "/admin/directory-theme/theme/style.css"
+
+
+	RewriteEngine on
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME}\.html -f
+	RewriteRule ^(.*)$ $1.html

@@ -1,0 +1,26 @@
+version: '3.9'
+services:
+  webserver:
+    container_name: webserver
+    build:
+      context: .
+    restart: unless-stopped
+    ports:
+      - 80:80
+    volumes: 
+      - ./wwwroot:/var/www/html
+      - ./www/apache2/conf/sites-available/000-default.conf:/etc/apache2/sites-available/000-default.conf
+      - ./www/apache2/conf/sites-available/default-ssl.conf:/etc/apache2/sites-available/default-ssl.conf
+      - ./www/apache2/conf/conf-available/laravel-geo-ressources.conf:/etc/apache2/conf-available/laravel-geo-ressources.conf
+      - ./www/apache2/conf/conf-available/leaflet-photo-maps.conf:/etc/apache2/conf-available/leaflet-photo-maps.conf
+    networks:
+      - webserver
+
+networks:
+  webserver:
+    name: webserver
+    driver: bridge
+    ipam:
+      config:
+        - subnet: "172.18.0.0/16"
+          gateway: "172.18.0.1"

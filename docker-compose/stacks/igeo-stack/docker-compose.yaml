@@ -1,0 +1,45 @@
+---
+version: '3.9'
+services:
+  gdal:
+    container_name: gdal
+    build:
+      context: ./gdal
+      dockerfile: Dockerfile
+      args:
+        JAVA_VERSION: 11
+        PROJ_VERSION: 9.2.1
+        GEOS_VERSION: 3.12.0
+        GDAL_VERSION: 3.7.2
+        JETTY_VERSION: 10.0.16
+        TZ: Europe/Paris
+    restart: "unless-stopped"
+    networks:
+      - igeo
+
+  geoserver:
+    container_name: geoserver
+    depends_on:
+      - gdal
+    build:
+      context: ./geoserver
+      dockerfile: Dockerfile
+      args:
+        TZ: Europe/Paris
+    restart: "unless-stopped"
+    ports:
+      - 8080:8080
+    volumes:
+      - ./geoserver/config:/app/geoserver/config
+      - ./geoserver/geo-data:/app/geoserver/geo-data
+    networks:
+      - igeo
+
+networks:
+  igeo:
+    name: igeo
+    driver: bridge
+    ipam:
+      config:
+        - subnet: "172.18.0.0/16"
+          gateway: "172.18.0.1"
