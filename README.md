@@ -3,5 +3,5 @@ Vous trouverez ici ma collection personnelle de modèles et de configurations po
 
 ## SOMMAIRE
 
-### Modèles Docker & Docker Compose
+### Docker & Docker Compose
 - DOCKER COMPOSE : [ICI](https://github.com/allfab/boilerplates/tree/main/docker-compose)
