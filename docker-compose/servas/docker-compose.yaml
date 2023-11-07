@@ -8,8 +8,8 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - ./servas/.env:/var/www/html/.env
-      - ./servas/db:/var/www/html/database/sqlite
+      - .env:/var/www/html/.env
+      - ./db:/var/www/html/database/sqlite
     networks:
       - servas
 
