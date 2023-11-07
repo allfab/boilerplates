@@ -3,5 +3,5 @@ Vous trouverez ici ma collection personnelle de modèles et de configurations po
 
 ## SOMMAIRE
 
-### docker compose
-- 🖹 DOCKER COMPOSE : [ICI](https://github.com/allfab/boilerplates/tree/main/docker-compose)
+### DOCKER COMPOSE
+- 🖹 Ensemble des stacks et containers Docker configurés avec docker compose : [ICI](https://github.com/allfab/boilerplates/tree/main/docker-compose)
