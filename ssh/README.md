@@ -43,7 +43,7 @@ J'ai ensuite ajouté la commande [**neofetch**](https://github.com/dylanaraps/ne
 ## Utilisation de figurine pour créer l'entête de la bannière de connexion personnalisée
 
 [**figurine**](https://github.com/arsham/figurine) permet d'imprimer un texte avec style sur un terminal :
-![Screenshot](/docs/figurine.png?raw=true "Rainbow")
+![image](https://github.com/allfab/boilerplates/assets/1840185/1cccf291-2730-49cb-b345-0a789d30494f)
 
 ## Utilisation de neofetch pour enrichir la bannière de connexion personnalisée
 
