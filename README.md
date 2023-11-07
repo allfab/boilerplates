@@ -6,5 +6,8 @@ Vous trouverez ici ma collection personnelle de modèles et de configurations po
 ### DOCKER COMPOSE
 - 🖹📚 Ensemble des stacks et containers Docker configurés avec docker compose : [ICI](https://github.com/allfab/boilerplates/tree/main/docker-compose)
 
-### MÉMO github
+### SSH
+- ⌨️ SSH : [ICI](https://github.com/allfab/boilerplates/blob/main/ssh)
+
+### GITHUB
 - 📝 Mémo : [ICI](https://github.com/allfab/boilerplates/blob/main/MEMO-GITHUB.md)
