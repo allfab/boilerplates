@@ -3,6 +3,12 @@
 Autrefois, avant les interfaces graphiques, les administrateurs système laissaient un message aux utilisateurs en utilisant le fichier « MOTD » du message du jour.
 L'option motd est toujours disponible sur la plupart des systèmes Linux modernes. Dans cet article, nous allons voir comment créer une jolie bannière de connexion personnalisée avec des illustrations ASCII et des informations système.
 
+### Sommaire
+
+1. [Installation](#installation)
+2. [Usage](#usage)
+3. [See Also](#see-also)
+4. [License](#license)
 
 ## Définition d'un MOTD de texte de base sous Linux
 
@@ -10,16 +16,16 @@ Vous pouvez facilement définir un message texte de base du jour en éditant le 
 
 Exemple:
 
-```
-$ sudo vi /etc/motd
+```bash
+sudo vi /etc/motd
 #######################################
 # CECI EST UN MESSAGE DE TEST DANS /etc/motd #
 #######################################
 ```
 
 Désormais, lorsque quelqu'un se connectera via le terminal ou ssh, il verra le message.
-```
-$ ssh monadresseip
+```bash
+ssh monadresseip
 Mot de passe de user@monadresseip :
 #######################################
 # CECI EST UN MESSAGE DE TEST DANS /etc/motd #
@@ -45,6 +51,48 @@ J'ai ensuite ajouté la commande [**neofetch**](https://github.com/dylanaraps/ne
 [**figurine**](https://github.com/arsham/figurine) permet d'imprimer un texte avec style sur un terminal :
 ![image](https://github.com/allfab/boilerplates/assets/1840185/1cccf291-2730-49cb-b345-0a789d30494f)
 
+## Installation
+
+Vous pouvez télécharger le dernier binaire de **Figurine** [**ici**](https://github.com/arsham/figurine/releases) :
+
+Ensuite :
+```bash
+tar xzf https://github.com/arsham/figurine/releases/download/v1.3.0/figurine_linux_amd64_v1.3.0.tar.gz
+sudo chmod +x deploy/figurine
+mv deploy/figurine /usr/local/bin
+sudo rm -Rf deploy figurine_linux_amd64_v1.3.0.tar.gz
+```
+
+## Usage
+
+Every time the application is called, it chooses a random font for rendering the
+message. Pass the message you want to decorate as arguments.
+
+```bash
+figurine Some Text
+```
+
+You can print available fonts:
+
+```bash
+figurine -l
+figurine -l -s
+figurine -ls Sample Text
+```
+
+To set a font:
+
+```bash
+figurine -f "Poison.flf" Some Text
+```
+
+To get a list of available arguments:
+
+```bash
+figurine -h
+```
+
+
 ## Utilisation de neofetch pour enrichir la bannière de connexion personnalisée
 
 L'utilitaire [**neofetch**](https://github.com/dylanaraps/neofetch) est un outil de ligne de commande qui affiche le logo de distribution et les informations système pour le système sur lequel il est installé.
@@ -54,7 +102,7 @@ Installation de l'utilitaire neofetch :
 Vous pouvez installer **neofetch** facilement avec la plupart des gestionnaires de packages.
 
 Pour installer neofetch sur Debian/Ubuntu :
-```
+```bash
 sudo apt-get install neofetch
 ```
 
@@ -62,7 +110,7 @@ Utiliser neofetch :
 
 Bien que **neofetch** ait une tonne d'options, il vous suffit de l'invoquer sans aucun argument pour obtenir un joli logo ascii et des informations système (comme vu ci-dessus) :
 
-```
+```bash
 neofetch
 ```
 
