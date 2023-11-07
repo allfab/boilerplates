@@ -65,14 +65,13 @@ sudo rm -Rf deploy figurine_linux_amd64_v1.3.0.tar.gz
 
 ## Usage
 
-Every time the application is called, it chooses a random font for rendering the
-message. Pass the message you want to decorate as arguments.
+Chaque fois que l'application est appelée, elle choisit une police aléatoire pour restituer le message. Passez le message que vous souhaitez décorer comme arguments.
 
 ```bash
 figurine Some Text
 ```
 
-You can print available fonts:
+Vous pouvez imprimer les polices disponibles :
 
 ```bash
 figurine -l
@@ -80,13 +79,13 @@ figurine -l -s
 figurine -ls Sample Text
 ```
 
-To set a font:
+Pour définir une police :
 
 ```bash
 figurine -f "Poison.flf" Some Text
 ```
 
-To get a list of available arguments:
+Pour obtenir une liste des arguments disponibles :
 
 ```bash
 figurine -h
