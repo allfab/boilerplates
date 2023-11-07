@@ -1,0 +1,26 @@
+---
+version: '3.9'
+services:
+  postgis:
+    container_name: postgis
+    image: postgis/postgis:${POSTGIS_VERSION}
+    restart: always
+    ports:
+      - 5432:5432
+    volumes:
+      - ./postgis/data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    networks:
+      - database
+
+networks:
+  database:
+    name: database
+    driver: bridge
+    ipam:
+      config:
+        - subnet: "172.18.0.0/16"
+          gateway: "172.18.0.1"
