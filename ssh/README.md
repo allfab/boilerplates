@@ -35,7 +35,7 @@ Cela devrait fonctionner sur n'importe quelle machine Unix ou Linux, quelle que 
 
 Une autre option, plus flexible, consiste à créer un script et à le placer dans le dossier /etc/profile.d/. Tout script de ce dossier s'exécutera lorsqu'un utilisateur se connectera. 
 
-L'utilisation d'un script dans /etc/profile.d vous offre des possibilités presque illimitées. J'ai utilisé un générateur d'art ASCII pour créer le nom de mon serveurvia figurine et j'ai créé cette bannière de connexion :
+L'utilisation d'un script dans /etc/profile.d vous offre des possibilités presque illimitées. J'ai utilisé un générateur d'art ASCII pour créer le nom de mon serveur via [**figurine**](https://github.com/arsham/figurine) et j'ai créé cette bannière de connexion :
 ![image](https://github.com/allfab/boilerplates/assets/1840185/9d8d7991-5caf-4c44-9db9-c6a32e9834d5)
 
 J'ai ensuite ajouté les commandes lastlog et uptime pour me montrer des informations sur le serveur.
