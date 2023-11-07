@@ -46,7 +46,7 @@ L'utilisation d'un script dans /etc/profile.d vous offre des possibilités presq
 
 J'ai ensuite ajouté la commande [**neofetch**](https://github.com/dylanaraps/neofetch) pour me montrer des informations sur le serveur.
 
-# Comment créer une bannière de connexion ASCII Art via Figurine
+# Comment créer une bannière de connexion ASCII Art via Figurine & Neofetch
 
 ## Utilisation de figurine pour créer l'entête de la bannière de connexion personnalisée
 
@@ -116,3 +116,25 @@ neofetch
 ```
 
 Pour utiliser neofetch comme bannière de connexion, exécutez simplement la commande suivante pour créer un script qui s'exécute lors de la connexion.
+
+
+## Création du script /etc/profile.d/motd.sh
+
+```bash
+sudo vi /etc/profile.d/motd.sh
+```
+
+Ajoutez ces lignes :
+```bash
+#!bin/bash
+
+figurine -f "3d.flf" mon-serveur
+neofetch
+```
+
+On change les droits :
+```bash
+sudo chmod +x /etc/profile.d/motd.sh
+```
+
+Par défaut, le script est exécuté à la connexion de l'utilisateur via SSH.
