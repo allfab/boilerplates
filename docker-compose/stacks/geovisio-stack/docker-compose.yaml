@@ -51,7 +51,7 @@ services:
       OAUTH_PROVIDER: oidc
       FLASK_SECRET_KEY: ${FLASK_SECRET_KEY}
       API_FORCE_AUTH_ON_UPLOAD: True
-      API_BLUR_URL: http://localhost:5500/
+      API_BLUR_URL: http://localhost:5500
       PICTURE_PROCESS_THREADS_LIMIT: 0
       PICTURE_PROCESS_DERIVATES_STRATEGY: PREPROCESS
       FS_URL: /data/360app
@@ -97,7 +97,7 @@ services:
     environment:
       STRATEGY: FAST
     # healthcheck:
-    #   test: curl --fail http://localhost:5500/
+    #   test: curl --fail http://localhost:5500
     #   interval: 5s
     #   timeout: 5s
     #   retries: 5
@@ -122,7 +122,7 @@ services:
       replicas: 5 # by default this number of workers will be run. This can be change at runtime with `docker compose up background-worker -d --scale background-worker=<VALUE>`
     environment:
       DB_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@geovisio-db/${POSTGRES_DB}
-      API_BLUR_URL: http://localhost:5500/
+      API_BLUR_URL: http://localhost:5500
       PICTURE_PROCESS_DERIVATES_STRATEGY: PREPROCESS
       FS_URL: /data/360app
     extra_hosts:
