@@ -1,20 +1,64 @@
 ---
-version: "3.9"
 services:
   pyload:
     container_name: pyload
     image: lscr.io/linuxserver/pyload-ng:latest
-    restart: unless-stopped
-    ports:
-      - 7999:8000
-      #- 7227:7227 #optional
-    volumes:
-      - ./pyload/config:/config
-      - ./pyload/downloads:/downloads
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/Paris
+    volumes:
+      - ./pyload/config:/config
+      - ./pyload/downloads:/downloads
+    ports:
+      - 8000:8000
+      - 7227:7227 #optional
+    restart: unless-stopped
+    networks:
+      - download
+
+  aria2-pro:
+    container_name: aria2-pro
+    image: p3terx/aria2-pro
+    restart: unless-stopped
+    ports:
+      - 6800:6800
+      - 6888:6888
+      - 6888:6888/udp
+    volumes:
+      - ./aria2/config:/config
+      - ./aria2/downloads:/downloads
+    logging:
+      driver: json-file
+      options:
+        max-size: 1m
+    environment:
+      - PUID=100
+      - PGID=1000
+      - UMASK_SET=022
+      - RPC_SECRET=${ARIA2_PRO_PASSWORD}
+      - RPC_PORT=6800
+      - LISTEN_PORT=6888
+      - DISK_CACHE=64M
+      - IPV6_MODE=false
+      - UPDATE_TRACKERS=true
+      - CUSTOM_TRACKER_URL=
+      - SPECIAL_MODE=rclone
+      - TZ=Europe/Paris
+    networks:
+      - download
+
+  aria-ng:
+    container_name: aria-ng
+    image: p3terx/ariang   
+    restart: unless-stopped
+    command: --port 6880 --ipv6
+    ports:
+      - 6880:6880
+    logging:
+      driver: json-file
+      options:
+        max-size: 1m
     networks:
       - download
 
